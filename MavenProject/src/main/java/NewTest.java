@@ -1,6 +1,5 @@
 
 import java.net.MalformedURLException;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -24,22 +23,14 @@ public class NewTest {
 	  options.setCapability("marionette", false);
 	  driver = new FirefoxDriver(options);
   }
-    
- //@BeforeMethod
-  public Void bmthd() {
-	
-	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	return null;
-	// TODO Auto-generated method stub
-
-}
+   
   
  @Test(priority=2)
   public void openFFbrowser() {
 		driver.navigate().to("https://apartmentadda.com/user/security.php?is_adda_io=0#/visitor/visitor-in");
 		driver.findElement(By.name("email")).sendKeys("thomas@3five8.com");
 	    driver.findElement(By.name("password")).sendKeys("adda12345");
-	    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+	   
 	    //click on login button
 	    driver.findElement(By.id("submit_login")).click();
 	}
