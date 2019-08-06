@@ -24,7 +24,7 @@ public class NewTest {
 	  options.setCapability("marionette", false);
 	  driver = new FirefoxDriver(options);
   }
-  
+  Thread.sleep(5000);
     
  //@BeforeMethod
   public Void bmthd() {
