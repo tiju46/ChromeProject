@@ -4,8 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
-from selenium import webdriver;
-from selenium.webdriver.firefox.options as Options;
+//from selenium import webdriver;
+//from selenium.webdriver.firefox.options as Options;
+import org.openqa.selenium.firefox.FirefoxOptions
 
  
 public class NewTest {
