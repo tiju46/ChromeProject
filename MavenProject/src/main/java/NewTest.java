@@ -18,7 +18,7 @@ public class NewTest {
   public void launchbrowser() {
 	  System.out.println("launching Mozilla FireFox browser");
 	  System.setProperty("webdriver.gecko.driver","/home/testing/Downloads/geckodriver-v0.24.0-linux64/geckodriver");
-	  FirefoxOptions options = new FirefoxOptions()
+	  FirefoxOptions options = new FirefoxOptions();
 	  options.headless=True;
 	  driver = new FirefoxDriver(options);
 	  
