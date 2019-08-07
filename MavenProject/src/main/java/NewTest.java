@@ -2,9 +2,7 @@
 import java.net.MalformedURLException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.Test;
 
  
@@ -16,10 +14,8 @@ public class NewTest {
   @Test(priority=1)
   public void launchbrowser() {
 	  System.out.println("launching Mozilla FireFox browser");
-	  System.setProperty("webdriver.gecko.driver","/home/testing/Downloads/geckodriver-v0.24.0-linux64");
-	  FirefoxOptions options = new FirefoxOptions();
-	  options.setCapability("marionette", false);
-	  driver = new FirefoxDriver(options);
+	  System.setProperty("webdriver.gecko.driver","/home/testing/Downloads/geckodriver-v0.24.0-linux64/geckodriver");
+	  driver = new FirefoxDriver();
   }
    
   
