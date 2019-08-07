@@ -23,7 +23,7 @@ public class NewTest {
   }
    
   
- @Test(priority=2)
+ //@Test(priority=2)
   public void openFFbrowser() {
 		driver.navigate().to("https://apartmentadda.com/user/security.php?is_adda_io=0#/visitor/visitor-in");
 		driver.findElement(By.name("email")).sendKeys("thomas@3five8.com");
@@ -32,7 +32,7 @@ public class NewTest {
 	    //click on login button
 	    driver.findElement(By.id("submit_login")).click();
 	}
- @Test(priority=3)
+// @Test(priority=3)
  public void closeDriver() {
 		if(driver!=null) {
 			driver.close();
