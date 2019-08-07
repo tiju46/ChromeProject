@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
+from selenium import webdriver;
+from selenium.webdriver.firefox.options as Options;
 
  
 public class NewTest {
@@ -15,7 +17,10 @@ public class NewTest {
   public void launchbrowser() {
 	  System.out.println("launching Mozilla FireFox browser");
 	  System.setProperty("webdriver.gecko.driver","/home/testing/Downloads/geckodriver-v0.24.0-linux64/geckodriver");
-	  driver = new FirefoxDriver();
+	  options=Options()
+	  options.headless=True
+	  driver = webdriver.Firefox(options=options);
+	  
   }
    
   
