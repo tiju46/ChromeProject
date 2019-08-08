@@ -5,6 +5,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -13,18 +15,17 @@ import java.util.concurrent.TimeUnit;
 public class NewTest {
 
     private WebDriver driver;
-
-    public void launch() throws InterruptedException {
+    @BeforeTest
+    public void launch() {
         System.out.println("launching Mozilla FireFox browser");
         System.setProperty("webdriver.gecko.driver", "/home/testing/Downloads/geckodriver-v0.24.0-linux64/geckodriver");
         FirefoxOptions options = new FirefoxOptions();
         options.setHeadless(true);
         driver = new FirefoxDriver(options);
-        Thread.sleep(5000);
     }
 
 
-   // @Test(priority=1)
+    @Test(priority=1)
     public void openFFbrowser() throws Exception {
         driver.navigate().to("https://apartmentadda.com/user/security.php?is_adda_io=0#/visitor/visitor-in");
         driver.findElement(By.name("email")).sendKeys("thomas@3five8.com");
