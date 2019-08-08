@@ -33,7 +33,7 @@ public class NewTest {
 
         //click on login button
         driver.findElement(By.id("submit_login")).click();
-        this.takeSnapShot(driver, "/home/testing/Downloads/adda.png") ;
+        this.takeSnapShot(driver, "/tmp/adda.png") ;
     }
 
     // @Test(priority=3)
