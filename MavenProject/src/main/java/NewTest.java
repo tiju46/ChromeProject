@@ -24,7 +24,7 @@ public class NewTest {
     }
 
 
-   // @Test(priority=1)
+    @Test(priority=1)
     public void openFFbrowser() throws Exception {
         driver.navigate().to("https://apartmentadda.com/user/security.php?is_adda_io=0#/visitor/visitor-in");
         driver.findElement(By.name("email")).sendKeys("thomas@3five8.com");
