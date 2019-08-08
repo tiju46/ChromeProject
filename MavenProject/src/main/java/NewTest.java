@@ -1,18 +1,18 @@
-
-import java.net.MalformedURLException;
-
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.Test;
-//from selenium import webdriver;
-//from selenium.webdriver.firefox.options as Options;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.annotations.Test;
+
+import java.io.File;
 
 
 public class NewTest {
 
-    WebDriver driver;
+    private WebDriver driver;
 
 
     @Test(priority = 1)
@@ -25,14 +25,15 @@ public class NewTest {
     }
 
 
-    //@Test(priority=2)
-    public void openFFbrowser() {
+    @Test(priority=2)
+    public void openFFbrowser() throws Exception {
         driver.navigate().to("https://apartmentadda.com/user/security.php?is_adda_io=0#/visitor/visitor-in");
         driver.findElement(By.name("email")).sendKeys("thomas@3five8.com");
         driver.findElement(By.name("password")).sendKeys("adda12345");
 
         //click on login button
         driver.findElement(By.id("submit_login")).click();
+        this.takeSnapShot(driver, "/home/testing/Downloads/adda.png") ;
     }
 
     // @Test(priority=3)
@@ -42,4 +43,35 @@ public class NewTest {
         }
     }
 
+    /**
+
+     * This function will take screenshot
+
+     * @param webdriver
+
+     * @param fileWithPath
+
+     * @throws Exception
+
+     */
+
+    public void takeSnapShot(WebDriver webdriver,String fileWithPath) throws Exception{
+
+        //Convert web driver object to TakeScreenshot
+
+        TakesScreenshot scrShot =((TakesScreenshot)webdriver);
+
+        //Call getScreenshotAs method to create image file
+
+        File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+
+        //Move image file to new destination
+
+        File DestFile=new File(fileWithPath);
+
+        //Copy file at destination
+
+        FileUtils.copyFile(SrcFile, DestFile);
+
+    }
 }
