@@ -26,7 +26,7 @@ public class NewTest {
 
 
     @Test(priority=1)
-    public void openFFbrowser() throws Exception {
+    public void openFFbrowser() throws InterruptedException {
         driver.navigate().to("https://apartmentadda.com/user/security.php?is_adda_io=0#/visitor/visitor-in");
         driver.findElement(By.name("email")).sendKeys("thomas@3five8.com");
         driver.findElement(By.name("password")).sendKeys("adda12345");
@@ -34,10 +34,10 @@ public class NewTest {
 
         //click on login button
         driver.findElement(By.id("submit_login")).click();
-        this.takeSnapShot(driver, "/tmp/adda.png") ;
+        //this.takeSnapShot(driver, "/tmp/adda.png") ;
     }
 	@Test(priority=2)
-	public void CheckIn() throws Exception {
+	public void CheckIn() throws InterruptedException {
 		driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='unit_number']")).click();
 		driver.findElement(By.xpath("//div[contains(text(),'Block 1-002')]")).click();
 		driver.findElement(By.xpath("//tr"));
@@ -50,15 +50,15 @@ public class NewTest {
 		driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='reason']")).click();
 		driver.findElement(By.xpath("//div[contains(text(),'Personal')]")).click();
 		driver.findElement(By.xpath("//button[@name='save_visiter']")).click();
-		this.takeSnapShot(driver, "/tmp/checkin.png") ;
+		//this.takeSnapShot(driver, "/tmp/checkin.png") ;
 		Thread.sleep(5000);
 
 	}
 	@Test(priority=3)
-	public void CheckOut() throws Exception {
+	public void CheckOut() throws InterruptedException {
 		driver.findElement(By.xpath("//a[@href='#/visitor/visitor-out']")).click();
 		driver.findElement(By.xpath("//button[@type='button' and contains(., 'CHECK OUT')]")).click();
-		this.takeSnapShot(driver, "/tmp/checkout.png") ;
+		//this.takeSnapShot(driver, "/tmp/checkout.png") ;
 		Thread.sleep(5000);
 	}
 
