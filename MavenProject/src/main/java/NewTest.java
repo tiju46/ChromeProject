@@ -8,7 +8,6 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.Test;
 
 import java.io.File;
-import java.util.concurrent.TimeUnit;
 
 
 public class NewTest {
@@ -30,9 +29,7 @@ public class NewTest {
         driver.navigate().to("https://apartmentadda.com/user/security.php?is_adda_io=0#/visitor/visitor-in");
         driver.findElement(By.name("email")).sendKeys("thomas@3five8.com");
         driver.findElement(By.name("password")).sendKeys("adda12345");
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-
-        //click on login button
+        //driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         driver.findElement(By.id("submit_login")).click();
         this.takeSnapShot(driver, "/tmp/adda.png");
     }
