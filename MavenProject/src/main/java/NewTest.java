@@ -15,7 +15,6 @@ public class NewTest {
     private WebDriver driver;
 
 
-    @Test(priority = 1)
     public void launchbrowser() {
         System.out.println("launching Mozilla FireFox browser");
         System.setProperty("webdriver.gecko.driver", "/home/testing/Downloads/geckodriver-v0.24.0-linux64/geckodriver");
@@ -25,7 +24,7 @@ public class NewTest {
     }
 
 
-    @Test(priority=2)
+    @Test(priority=1)
     public void openFFbrowser() throws Exception {
         driver.navigate().to("https://apartmentadda.com/user/security.php?is_adda_io=0#/visitor/visitor-in");
         driver.findElement(By.name("email")).sendKeys("thomas@3five8.com");
@@ -35,6 +34,32 @@ public class NewTest {
         driver.findElement(By.id("submit_login")).click();
         this.takeSnapShot(driver, "/tmp/adda.png") ;
     }
+	@Test(priority=2)
+	public void CheckIn() throws Exception {
+		driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='unit_number']")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'Block 1-002')]")).click();
+		driver.findElement(By.xpath("//tr"));
+		driver.findElement(By.xpath("//button[@type='button'][contains(text(),'CHECK IN')]")).click();
+		//Wait for 5 Sec
+		Thread.sleep(5000);
+		//JavascriptExecutor js = (JavascriptExecutor) driver;
+		//js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		//Thread.sleep(5000);
+		driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='reason']")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'Personal')]")).click();
+		driver.findElement(By.xpath("//button[@name='save_visiter']")).click();
+		this.takeSnapShot(driver, "/tmp/checkin.png") ;
+		Thread.sleep(5000);
+
+	}
+	@Test(priority=3)
+	public void CheckOut() throws Exception {
+		driver.findElement(By.xpath("//a[@href='#/visitor/visitor-out']")).click();
+		driver.findElement(By.xpath("//button[@type='button' and contains(., 'CHECK OUT')]")).click();
+		this.takeSnapShot(driver, "/tmp/checkout.png") ;
+		Thread.sleep(5000);
+	}
+
 
     // @Test(priority=3)
     public void closeDriver() {
