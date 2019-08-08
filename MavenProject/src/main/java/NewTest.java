@@ -14,13 +14,13 @@ public class NewTest {
 
     private WebDriver driver;
 
-
-    public void launch() {
+    public void launch() throws InterruptedException {
         System.out.println("launching Mozilla FireFox browser");
         System.setProperty("webdriver.gecko.driver", "/home/testing/Downloads/geckodriver-v0.24.0-linux64/geckodriver");
         FirefoxOptions options = new FirefoxOptions();
         options.setHeadless(true);
         driver = new FirefoxDriver(options);
+        Thread.sleep(5000);
     }
 
 
