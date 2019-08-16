@@ -24,7 +24,8 @@ public class NewTest {
         //options.setHeadless(false);
         //driver = new FirefoxDriver(options);
         System.out.println("launching Chrome browser");
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\tiju thomas\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "C:\\Users\\tiju thomas\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/home/testing/Desktop/chromedriver_linux64/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.setHeadless(false);
         driver = new ChromeDriver(options);
