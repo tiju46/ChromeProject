@@ -27,7 +27,7 @@ public class NewTest {
         //System.setProperty("webdriver.chrome.driver", "C:\\Users\\tiju thomas\\Downloads\\chromedriver_win32\\chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", "/home/testing/Downloads/chromedriver_linux64/chromedriver");
         ChromeOptions options = new ChromeOptions();
-        options.setHeadless(true);
+        options.setHeadless(false);
         driver = new ChromeDriver(options);
     }
 
