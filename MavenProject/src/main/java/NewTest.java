@@ -63,14 +63,14 @@ public class NewTest {
         System.out.println("Test Case Passed ----- Visitor Checked Out");
         Thread.sleep(5000);
     }
-    @Test(priority=4)
+    //@Test(priority=4)
     public void staffcheckin() throws InterruptedException {
         driver.findElement(By.xpath("//p[contains(text(),'Staff')]")).click();
         driver.findElement(By.xpath("//button[@type='button'][contains(text(),'CHECK IN')]")).click();
         Thread.sleep(5000);
         System.out.println("Test Case Passed ----- Staff Checked In");
     }
-    @Test(priority=5)
+    //@Test(priority=5)
     public void staffcheckout() throws InterruptedException {
         driver.findElement(By.xpath("//a[@href='#/staff/staff-out']")).click();
         driver.findElement(By.xpath("//button[@type='button'][contains(text(),'CHECK OUT')]")).click();
@@ -78,7 +78,7 @@ public class NewTest {
         System.out.println("Test Case Passed ----- Staff Checked Out");
     }
 
-    @Test(priority=6)
+    @Test(priority=4)
     public void closeDriver() {
         if (driver != null) {
             driver.close();
