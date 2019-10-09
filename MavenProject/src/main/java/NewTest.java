@@ -19,10 +19,10 @@ public class NewTest {
     public void launch() {
        
         System.out.println("launching Chrome browser");
-        System.setProperty("webdriver.chrome.driver", "D:\\chromedriver77\\chromedriver.exe");
-        //System.setProperty("webdriver.chrome.driver", "/home/testing/Downloads/chromedrvr/chromedriver");
+        //System.setProperty("webdriver.chrome.driver", "D:\\chromedriver77\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/home/testing/Downloads/chromedrvr/chromedriver");
         ChromeOptions options = new ChromeOptions();
-        options.setHeadless(false);
+        options.setHeadless(true);
         driver = new ChromeDriver(options);
     }
 
