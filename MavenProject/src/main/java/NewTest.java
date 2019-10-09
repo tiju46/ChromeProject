@@ -52,7 +52,7 @@ public class NewTest {
             Thread.sleep(5000);
         }
         catch(Exception e) {
-            System.out.println("Test Case failed ----- Visitor Checked In ");
+            System.out.println("Test Case failed ----- Check In ");
         }
     }
 
@@ -65,7 +65,7 @@ public class NewTest {
         Thread.sleep(5000);
     	}
     	catch(Exception e) {
-            System.out.println("Test Case failed ----- Visitor Checked Out");
+            System.out.println("Test Case failed ----- Check Out");
         }
     }
     //@Test(priority=4)
