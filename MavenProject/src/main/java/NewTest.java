@@ -19,10 +19,10 @@ public class NewTest {
     public void launch() {
        
         System.out.println("launching Chrome browser");
-        //System.setProperty("webdriver.chrome.driver", "D:\\chromedriver77\\chromedriver.exe");
-        System.setProperty("webdriver.chrome.driver", "/home/testing/Downloads/chromedrvr/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "D:\\chromedriver77\\chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "/home/testing/Downloads/chromedrvr/chromedriver");
         ChromeOptions options = new ChromeOptions();
-        options.setHeadless(true);
+        options.setHeadless(false);
         driver = new ChromeDriver(options);
     }
 
@@ -39,7 +39,7 @@ public class NewTest {
 
     @Test(priority=2)
     public void CheckIn() throws InterruptedException {
-        try {
+       
             System.out.println("*****--- Expected Visitor ---*****");
             driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='unit_number']")).click();
             driver.findElement(By.xpath("//div[contains(text(),'200-15')]")).click();
@@ -50,23 +50,17 @@ public class NewTest {
             driver.findElement(By.xpath("//button[@name='save_visiter']")).click();
             System.out.println("Test Case Passed ----- Visitor Checked In");
             Thread.sleep(5000);
-        }
-        catch(Exception e) {
-            System.out.println("Test Case failed ----- Check In ");
-        }
+   
     }
 
    @Test(priority=3)
     public void CheckOut() throws InterruptedException {
-    	try {
+    	
         driver.findElement(By.xpath("//a[@href='#/visitor/visitor-out']")).click();
         driver.findElement(By.xpath("//button[@type='button' and contains(., 'CHECK OUT')]")).click();
         System.out.println("Test Case Passed ----- Visitor Checked Out");
         Thread.sleep(5000);
-    	}
-    	catch(Exception e) {
-            System.out.println("Test Case failed ----- Check Out");
-        }
+    	
     }
     //@Test(priority=4)
     public void staffcheckin() throws InterruptedException {
