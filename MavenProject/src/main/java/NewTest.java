@@ -25,7 +25,7 @@ public class NewTest {
         //driver = new FirefoxDriver(options);
         System.out.println("launching Chrome browser");
         //System.setProperty("webdriver.chrome.driver", "C:\\Users\\tiju thomas\\Downloads\\chromedriver_win32\\chromedriver.exe");
-        System.setProperty("webdriver.chrome.driver", "/home/testing/Downloads/chromedriver_linux64/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/home/testing/Downloads/chromedriver_linux64(1)/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.setHeadless(true);
         driver = new ChromeDriver(options);
@@ -88,7 +88,7 @@ public class NewTest {
 }
 
     /**
-
+     tiju
      * This function will take screenshot
 
      * @param webdriver
