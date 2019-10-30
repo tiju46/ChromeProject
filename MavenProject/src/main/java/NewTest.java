@@ -67,7 +67,7 @@ public class NewTest {
        driver.findElement(By.xpath("//a[@class='nav-link active-cm']")).click();
 	   //driver.findElement(By.xpath("//span[@class='input-group-text']")).click();
 	   driver.findElement(By.xpath("//input[@id='visiter_search']")).sendKeys("john");
-	   Thread.sleep(2000);
+	   Thread.sleep(3000);
        driver.findElement(By.xpath("//*[contains(text(),'Search')]")).click();
        Thread.sleep(2000);
        driver.findElement(By.xpath("//*[contains(text(),'CHECK IN')]")).click();
