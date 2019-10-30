@@ -63,9 +63,8 @@ public class NewTest {
    @Test(priority=4)
    public void staffcheckin() throws InterruptedException {
 	   driver.findElement(By.xpath("//p[contains(text(),'Staff')]")).click();
-       Thread.sleep(2000);
+       Thread.sleep(4000);
 	   //driver.findElement(By.xpath("//span[@class='input-group-text']")).click();
-       browser.actions().click().perform();
 	   driver.findElement(By.xpath("//input[@id='visiter_search']")).sendKeys("john");
 	   Thread.sleep(2000);
        driver.findElement(By.xpath("//*[contains(text(),'Search')]")).click();
