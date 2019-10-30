@@ -64,7 +64,7 @@ public class NewTest {
    public void staffcheckin() throws InterruptedException {
 	   driver.findElement(By.xpath("//p[contains(text(),'Staff')]")).click();
        Thread.sleep(2000);
-	   driver.findElement(By.xpath("//span[@class='input-group-text']")).click();
+	   //driver.findElement(By.xpath("//span[@class='input-group-text']")).click();
 	   driver.findElement(By.xpath("//input[@id='visiter_search']")).sendKeys("john");
 	   Thread.sleep(2000);
        driver.findElement(By.xpath("//*[contains(text(),'Search')]")).click();
@@ -76,7 +76,7 @@ public class NewTest {
    
    @Test(priority=5)
    public void staffcheckout() throws InterruptedException {
-       driver.findElement(By.xpath("//span[@class='input-group-text']")).click();
+      // driver.findElement(By.xpath("//span[@class='input-group-text']")).click();
 	   driver.findElement(By.xpath("//input[@id='visiter_search']")).sendKeys("john");
 	   Thread.sleep(2000);
        driver.findElement(By.xpath("//*[contains(text(),'Search')]")).click();
