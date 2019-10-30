@@ -85,7 +85,7 @@ public class NewTest {
 	   Thread.sleep(4000);
    }
 
-    @AfterTest
+    @Test(priority=6)
     public void closeDriver() {
         if (driver != null) {
             driver.close();
