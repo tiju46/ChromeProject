@@ -82,7 +82,7 @@ public class NewTest {
 	   Thread.sleep(4000);
    }
    
-   @Test(priority=5)
+  // @Test(priority=5)
    public void staffcheckout() throws InterruptedException {
       // driver.findElement(By.xpath("//span[@class='input-group-text']")).click();
 	   driver.findElement(By.xpath("//input[@id='visiter_search']")).sendKeys("john");
