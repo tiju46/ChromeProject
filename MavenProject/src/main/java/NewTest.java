@@ -65,6 +65,7 @@ public class NewTest {
 	   driver.findElement(By.xpath("//p[contains(text(),'Staff')]")).click();
        Thread.sleep(2000);
 	   //driver.findElement(By.xpath("//span[@class='input-group-text']")).click();
+       browser.actions().mouseMove(nextButton).click().perform();
 	   driver.findElement(By.xpath("//input[@id='visiter_search']")).sendKeys("john");
 	   Thread.sleep(2000);
        driver.findElement(By.xpath("//*[contains(text(),'Search')]")).click();
