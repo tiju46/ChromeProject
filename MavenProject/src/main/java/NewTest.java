@@ -4,11 +4,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import java.util.concurrent.TimeUnit;
 
-//import org.openqa.selenium.firefox.FirefoxDriver;
-//import org.openqa.selenium.firefox.FirefoxOptions;
 
 
 public class NewTest {
@@ -28,8 +25,10 @@ public class NewTest {
 
 
     @Test(priority = 1)
-    public void openFFbrowser() throws Exception {
+    public void openChromebrowser() throws Exception {
         driver.navigate().to("https://apartmentadda.com/user/security.php?is_adda_io=0#/visitor/visitor-in");
+        driver.manage().window().maximize();
+        Thread.sleep(1000);
         driver.findElement(By.name("email")).sendKeys("thomastiju@yahoo.com");
         driver.findElement(By.name("password")).sendKeys("adda1234");
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -37,47 +36,56 @@ public class NewTest {
         //this.takeSnapShot(driver, "/tmp/adda.png");
     }
 
-    @Test(priority=2)
+   @Test(priority=2)
     public void CheckIn() throws InterruptedException {
        
-            System.out.println("*****--- Expected Visitor ---*****");
-            driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='unit_number']")).click();
-            driver.findElement(By.xpath("//div[contains(text(),'200-15')]")).click();
-            driver.findElement(By.xpath("//button[@type='button'][contains(text(),'CHECK IN')]")).click();
-            Thread.sleep(5000);
-            driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='reason']")).click();
-            driver.findElement(By.xpath("//div[contains(text(),'Personal')]")).click();
-            driver.findElement(By.xpath("//button[@name='save_visiter']")).click();
-            System.out.println("Test Case Passed ----- Visitor Checked In");
-            Thread.sleep(5000);
+         System.out.println("*****--- Expected Visitor ---*****");
+         driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='unit_number']")).click();
+         driver.findElement(By.xpath("//div[contains(text(),'200-15')]")).click();
+         driver.findElement(By.xpath("//button[@type='button'][contains(text(),'CHECK IN')]")).click();
+         Thread.sleep(5000);
+         driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='reason']")).click();
+         driver.findElement(By.xpath("//div[contains(text(),'Personal')]")).click();
+         driver.findElement(By.xpath("//button[@name='save_visiter']")).click();
+         System.out.println("Test Case Passed ----- Visitor Checked In");
+         Thread.sleep(5000);
    
     }
 
    @Test(priority=3)
     public void CheckOut() throws InterruptedException {
-    	
-        driver.findElement(By.xpath("//a[@href='#/visitor/visitor-out']")).click();
-        driver.findElement(By.xpath("//button[@type='button' and contains(., 'CHECK OUT')]")).click();
-        System.out.println("Test Case Passed ----- Visitor Checked Out");
-        Thread.sleep(5000);
-    	
+	   driver.findElement(By.xpath("//a[@href='#/visitor/visitor-out']")).click();
+       driver.findElement(By.xpath("//button[@type='button' and contains(., 'CHECK OUT')]")).click();
+       System.out.println("Test Case Passed ----- Visitor Checked Out");
+       Thread.sleep(5000);
     }
-    //@Test(priority=4)
-    public void staffcheckin() throws InterruptedException {
-        driver.findElement(By.xpath("//p[contains(text(),'Staff')]")).click();
-        driver.findElement(By.xpath("//button[@type='button'][contains(text(),'CHECK IN')]")).click();
-        Thread.sleep(5000);
-        System.out.println("Test Case Passed ----- Staff Checked In");
-    }
-    //@Test(priority=5)
-    public void staffcheckout() throws InterruptedException {
-        driver.findElement(By.xpath("//a[@href='#/staff/staff-out']")).click();
-        driver.findElement(By.xpath("//button[@type='button'][contains(text(),'CHECK OUT')]")).click();
-        Thread.sleep(5000);
-        System.out.println("Test Case Passed ----- Staff Checked Out");
-    }
+   
+   @Test(priority=4)
+   public void staffcheckin() throws InterruptedException {
+	   driver.findElement(By.xpath("//nav[@class='navbar navbar-expand-md navbar-dark bg-dark menu-position']//li[2]//a[1] ")).click();
+       Thread.sleep(2000);
+	   //driver.findElement(By.xpath("//p[contains(text(),'Staff')]")).click();
+	   driver.findElement(By.xpath("//input[@id='visiter_search']")).click();
+	   driver.findElement(By.xpath("//input[@id='visiter_search']")).sendKeys("john");
+	   Thread.sleep(2000);
+	   driver.findElement(By.xpath("//button[@class='btn btn-primary vona-btn']")).click();
+	   driver.findElement(By.xpath("//button[@class='btn btn-primary btn-bggreen ng-star-inserted']")).click();
+	   System.out.println("Test Case Passed ----- Staff Checked In");
+	   Thread.sleep(4000);
+   }
+   
+   @Test(priority=5)
+   public void staffcheckout() throws InterruptedException {
+	   driver.findElement(By.xpath("//input[@id='visiter_search']")).click();
+	   driver.findElement(By.xpath("//input[@id='visiter_search']")).sendKeys("john");
+	   Thread.sleep(2000);
+	   driver.findElement(By.xpath("//button[@class='btn btn-primary vona-btn']")).click();
+	   driver.findElement(By.xpath("//button[@class='btn btn-primary ng-star-inserted']")).click();
+	   System.out.println("Test Case Passed ----- Staff Checked Out");
+	   Thread.sleep(4000);
+   }
 
-    @Test(priority=4)
+    @AfterTest
     public void closeDriver() {
         if (driver != null) {
             driver.close();
