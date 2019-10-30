@@ -52,7 +52,7 @@ public class NewTest {
    
     }
 
-   @Test(priority=3)
+   //@Test(priority=3)
     public void CheckOut() throws InterruptedException {
 	   driver.findElement(By.xpath("//a[@href='#/visitor/visitor-out']")).click();
        driver.findElement(By.xpath("//button[@type='button' and contains(., 'CHECK OUT')]")).click();
@@ -62,27 +62,27 @@ public class NewTest {
    
    @Test(priority=4)
    public void staffcheckin() throws InterruptedException {
-	   //driver.findElement(By.xpath("//nav[@class='navbar navbar-expand-md navbar-dark bg-dark menu-position']//li[2]//a[1] ")).click();
-
 	   driver.findElement(By.xpath("//p[contains(text(),'Staff')]")).click();
        Thread.sleep(2000);
-	   //driver.findElement(By.xpath("//input[@id='visiter_search']")).click();
+	   driver.findElement(By.xpath("//span[@class='input-group-text']")).click();
 	   driver.findElement(By.xpath("//input[@id='visiter_search']")).sendKeys("john");
 	   Thread.sleep(2000);
-	   //driver.findElement(By.xpath("//button[@class='btn btn-primary vona-btn']")).click();
-	   driver.findElement(By.xpath("//button[@class='btn btn-primary btn-bggreen ng-star-inserted']")).click();
-	   System.out.println("Test Case Passed ----- Staff Checked In");
+       driver.findElement(By.xpath("//*[contains(text(),'Search')]")).click();
+       Thread.sleep(2000);
+       driver.findElement(By.xpath("//*[contains(text(),'CHECK IN')]")).click();
+       System.out.println("Test Case Passed ----- Staff Checked In");
 	   Thread.sleep(4000);
    }
    
    @Test(priority=5)
    public void staffcheckout() throws InterruptedException {
-	   //driver.findElement(By.xpath("//input[@id='visiter_search']")).click();
+       driver.findElement(By.xpath("//span[@class='input-group-text']")).click();
 	   driver.findElement(By.xpath("//input[@id='visiter_search']")).sendKeys("john");
 	   Thread.sleep(2000);
-	   //driver.findElement(By.xpath("//button[@class='btn btn-primary vona-btn']")).click();
-	   driver.findElement(By.xpath("//button[@class='btn btn-primary ng-star-inserted']")).click();
-	   System.out.println("Test Case Passed ----- Staff Checked Out");
+       driver.findElement(By.xpath("//*[contains(text(),'Search')]")).click();
+       Thread.sleep(2000);
+       driver.findElement(By.xpath("//*[contains(text(),'CHECK OUT')]")).click();
+       System.out.println("Test Case Passed ----- Staff Checked Out");
 	   Thread.sleep(4000);
    }
 
