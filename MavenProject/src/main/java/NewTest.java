@@ -68,8 +68,8 @@ public class NewTest {
 	   //driver.findElement(By.xpath("//span[@class='input-group-text']")).click();
 	   driver.findElement(By.xpath("//input[@id='visiter_search']")).sendKeys("john");
 	   Thread.sleep(3000);
-       WebDriverWait wait = new WebDriverWait(driver, 15);
-       wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Search')]")));
+       String buttonCss="app-staff.ng-star-inserted:nth-child(3) app-staff-in.ng-star-inserted:nth-child(3) div.container-fluid.module-padd.bg-color-gray:nth-child(1) div.container div.row div.col-md-12.ng-star-inserted div.serch-box.form-group.ng-star-inserted div.input-group div.input-group-append span:nth-child(1) > button.btn.btn-primary.vona-btn";
+       driver.findElement(By.cssSelector(buttonCss)).click();
        //driver.findElement(By.xpath("//*[contains(text(),'Search')]")).click();
        Thread.sleep(2000);
        driver.findElement(By.xpath("//*[contains(text(),'CHECK IN')]")).click();
