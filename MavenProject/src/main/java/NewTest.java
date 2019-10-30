@@ -68,9 +68,9 @@ public class NewTest {
 	   //driver.findElement(By.xpath("//span[@class='input-group-text']")).click();
 	   driver.findElement(By.xpath("//input[@id='visiter_search']")).sendKeys("john");
 	   Thread.sleep(3000);
+       WebDriverWait wait = new WebDriverWait(driver, 15);
+       wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Search')]")));
        //driver.findElement(By.xpath("//*[contains(text(),'Search')]")).click();
-       WebElement myelement = driver.findElement(By.xpath("//*[contains(text(),'Search')]"));
-       JavascriptExecutor jse2 = (JavascriptExecutor)driver; jse2.executeScript("arguments[0].scrollIntoView()", myelement);
        Thread.sleep(2000);
        driver.findElement(By.xpath("//*[contains(text(),'CHECK IN')]")).click();
        System.out.println("Test Case Passed ----- Staff Checked In");
