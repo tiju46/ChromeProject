@@ -69,7 +69,7 @@ public class NewTest {
 	   driver.findElement(By.xpath("//input[@id='visiter_search']")).sendKeys("john");
 	   Thread.sleep(2000);
        driver.findElement(By.xpath("//*[contains(text(),'Search')]")).click();
-       Thread.sleep(2000);
+       Thread.sleep(2000)
        driver.findElement(By.xpath("//*[contains(text(),'CHECK IN')]")).click();
        System.out.println("Test Case Passed ----- Staff Checked In");
 	   Thread.sleep(4000);
