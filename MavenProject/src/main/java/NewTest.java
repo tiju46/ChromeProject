@@ -69,9 +69,8 @@ public class NewTest {
 	   driver.findElement(By.xpath("//input[@id='visiter_search']")).sendKeys("john");
 	   Thread.sleep(3000);
        //driver.findElement(By.xpath("//*[contains(text(),'Search')]")).click();
-       WebElement element = driver.findElement(By.xpath("//*[contains(text(),'Search')]"));
-       Actions actions = new Actions(driver);
-       actions.moveToElement(element).click().build().perform();
+       WebElement myelement = driver.findElement(By.xpath("//*[contains(text(),'Search')]"));
+       JavascriptExecutor jse2 = (JavascriptExecutor)driver; jse2.executeScript("arguments[0].scrollIntoView()", myelement);
        Thread.sleep(2000);
        driver.findElement(By.xpath("//*[contains(text(),'CHECK IN')]")).click();
        System.out.println("Test Case Passed ----- Staff Checked In");
