@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.Keys;
 
 
 
@@ -68,11 +69,12 @@ public class NewTest {
        driver.findElement(By.xpath("//a[@class='nav-link active-cm']")).click();
 	   driver.findElement(By.xpath("//input[@id='visiter_search']")).sendKeys("john");
        System.out.println("passed value - john");
-       driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-       driver.findElement(By.xpath("//*[contains(text(),'Search')]"));
+       driver.findElement(By.xpath("//input[@id='visiter_search']")).sendKeys(Keys.ENTER);
+      // driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+       //driver.findElement(By.xpath("//*[contains(text(),'Search')]"));
        System.out.println("clicked on search button");
        Thread.sleep(2000);
-      // driver.findElement(By.xpath("//*[contains(text(),'CHECK IN')]")).click();
+      driver.findElement(By.xpath("//*[contains(text(),'CHECK IN')]")).click();
        System.out.println("clicked on check in button");
        System.out.println("Test Case Passed ----- Staff Checked In");
 	   Thread.sleep(4000);
