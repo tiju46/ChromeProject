@@ -36,7 +36,7 @@ public class NewTest {
         //this.takeSnapShot(driver, "/tmp/adda.png");
     }
 
-   @Test(priority=2)
+  // @Test(priority=2)
     public void CheckIn() throws InterruptedException {
        
          System.out.println("*****--- Expected Visitor ---*****");
@@ -62,9 +62,10 @@ public class NewTest {
    
    @Test(priority=4)
    public void staffcheckin() throws InterruptedException {
-	   driver.findElement(By.xpath("//nav[@class='navbar navbar-expand-md navbar-dark bg-dark menu-position']//li[2]//a[1] ")).click();
+	   //driver.findElement(By.xpath("//nav[@class='navbar navbar-expand-md navbar-dark bg-dark menu-position']//li[2]//a[1] ")).click();
+
+	   driver.findElement(By.xpath("//p[contains(text(),'Staff')]")).click();
        Thread.sleep(2000);
-	   //driver.findElement(By.xpath("//p[contains(text(),'Staff')]")).click();
 	   driver.findElement(By.xpath("//input[@id='visiter_search']")).click();
 	   driver.findElement(By.xpath("//input[@id='visiter_search']")).sendKeys("john");
 	   Thread.sleep(2000);
