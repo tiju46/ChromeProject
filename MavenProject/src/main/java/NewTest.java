@@ -37,9 +37,8 @@ public class NewTest {
         //this.takeSnapShot(driver, "/tmp/adda.png");
     }
 
-  // @Test(priority=2)
+   @Test(priority=2)
     public void CheckIn() throws InterruptedException {
-       
          System.out.println("*****--- Expected Visitor ---*****");
          driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='unit_number']")).click();
          driver.findElement(By.xpath("//div[contains(text(),'200-15')]")).click();
@@ -50,10 +49,9 @@ public class NewTest {
          driver.findElement(By.xpath("//button[@name='save_visiter']")).click();
          System.out.println("Test Case Passed ----- Visitor Checked In");
          Thread.sleep(5000);
-   
     }
 
-   //@Test(priority=3)
+   @Test(priority=3)
     public void CheckOut() throws InterruptedException {
 	   driver.findElement(By.xpath("//a[@href='#/visitor/visitor-out']")).click();
        driver.findElement(By.xpath("//button[@type='button' and contains(., 'CHECK OUT')]")).click();
@@ -73,7 +71,7 @@ public class NewTest {
        //System.out.println("clicked on search button");
        Thread.sleep(2000);
        driver.findElement(By.xpath("//*[contains(text(),'CHECK IN')]")).click();
-       System.out.println("clicked on check in button");
+       //System.out.println("clicked on check in button");
        System.out.println("Test Case Passed ----- Staff Checked In");
 	   Thread.sleep(4000);
    }
