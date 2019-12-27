@@ -42,7 +42,7 @@ public class NewTest {
          System.out.println("*****--- Expected Visitor ---*****");
          driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='unit_number']")).click();
          driver.findElement(By.xpath("//div[contains(text(),'200-15')]")).click();
-         driver.findElement(By.xpath("//button[@type='button'][contains(text(),'CHECK IN')]")).click();
+         driver.findElement(By.xpath("//button[@class='btn btn-primary btn-bggreen'][contains(text(),'IN')]")).click();
          Thread.sleep(5000);
          driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='reason']")).click();
          driver.findElement(By.xpath("//div[contains(text(),'Personal')]")).click();
