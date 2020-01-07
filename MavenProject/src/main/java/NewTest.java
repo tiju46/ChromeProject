@@ -41,7 +41,7 @@ public class NewTest {
     public void CheckIn() throws InterruptedException {
          System.out.println("*****--- Expected Visitor ---*****");
          driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='unit_number']")).click();
-         driver.findElement(By.xpath("//div[contains(text(),'200-15')]")).click();
+         driver.findElement(By.xpath("//div[contains(text(),'200-A1')]")).click();
          driver.findElement(By.xpath("//button[@class='btn btn-primary btn-bggreen'][contains(text(),'IN')]")).click();
          Thread.sleep(5000);
          driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='reason']")).click();
