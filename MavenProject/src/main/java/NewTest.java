@@ -27,16 +27,14 @@ public class NewTest {
 
     @Test(priority = 1)
     public void openChromebrowser() throws Exception {
-        driver.navigate().to("https://apartmentadda.com/user/security.php?is_adda_io=0#/visitor/visitor-in");
-        driver.manage().window().maximize();
-        Thread.sleep(1000);
-        driver.findElement(By.name("email")).sendKeys("thomastiju@yahoo.com");
-        driver.findElement(By.name("password")).sendKeys("adda1234");
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        driver.findElement(By.id("submit_login")).click();
+        driver.navigate().to("https://adda.io/");
+        driver.findElement(By.xpath("//a[contains(text(),'Sign In')]")).click(); 
+        driver.findElement(By.xpath("//input[@placeholder='E.g., johnstark@gmail.com']")).sendKeys("thomastiju@yahoo.com");
+        driver.findElement(By.xpath("//input[@name='password']")).sendKeys("adda1234");
+        Thread.sleep(4000);
+        driver.findElement(By.xpath("//button[@class='btn btn-form btn-adda-blue btn-shadow']")).click(); 
         //this.takeSnapShot(driver, "/tmp/adda.png");
     }
-
    @Test(priority=2)
     public void CheckIn() throws InterruptedException {
          System.out.println("*****--- Expected Visitor ---*****");
