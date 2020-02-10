@@ -18,7 +18,7 @@ public class NewTest {
        
         System.out.println("launching Chrome browser");
         //System.setProperty("webdriver.chrome.driver", "D:\\chromedriver77\\chromedriver.exe");
-        System.setProperty("webdriver.chrome.driver", "/home/testing/Downloads/chromedrvr/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/home/adda/chromedrvr/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.setHeadless(true);
         driver = new ChromeDriver(options);
